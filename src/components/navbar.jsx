@@ -1,62 +1,69 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SearchBar from './searchbar';
 import Sidebar from './sidebar';
 
-export default function navbar() {
+function Navbar() {
+
+  const [show,setshow] = useState(false);
+
   return (
     <div>
-      <nav class='fixed top-0 left-0 right-0 z-10 bg-white border-gray-200 dark:bg-gray-900'>
+      <nav class='fixed top-0 left-0 right-0 z-50 bg-white border-gray-200 dark:bg-gray-900'>
         <div class='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
-          {/* <!-- Logo --> */}
-          <a href='https://flowbite.com/' class='flex items-center'>
-            <span class='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
-              RES<span className=' text-green'>.</span>SHARE
-            </span>
-          </a>
-
-          {/* <!-- links --> */}
-          <div
-            class='items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ml-5'
-            id='navbar-user'
-          >
-            <ul class='flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'>
-              <li>
-                <a
-                  href='#'
-                  class='block py-2 pl-3 pr-4 font-sans font- font-medium text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500'
-                  aria-current='page'
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  class='block py-2 pl-3 pr-4 font-sans text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  class='block py-2 pl-3 pr-4 font-sans text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                >
-                  Services
-                </a>
-              </li>
-            </ul>
+          <div className='flex flex-row'>
+            {/* <!-- Logo --> */}
+            <a href='https://flowbite.com/' class='flex items-center'>
+              <span class='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
+                RES<span className=' text-green'>.</span>SHARE
+              </span>
+            </a>
+            {/* <!-- links --> */}
+            <div
+              class='items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ml-5'
+              id='navbar-user'
+            >
+              <ul class='flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'>
+                <li>
+                  <a
+                    href='#'
+                    class='block py-2 pl-3 pr-4 font-sans font- font-medium text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500'
+                    aria-current='page'
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='#'
+                    class='block  py-2 pl-3 pr-4 font-sans text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='#'
+                    class='block py-2 pl-3 pr-4 font-sans text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                  >
+                    Services
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* <!-- Responsive Search bar --> */}
-          <div className='hidden md:block'>
-            <SearchBar />
-          </div>
-          {/* <!-- Add resource button --> */}
-          <div class='flex items-center md:order-2'>
+         
+          <div class='flex  md:order-2'>
+            
+            {/* <!-- Responsive Search bar --> */}
+            <div className='hidden md:block mr-4'>
+              <SearchBar />
+            </div>
+
+             {/* <!-- Add resource button --> */}
             <button
               type='button'
-              class='text-black font-sans  items-center text-center bg-[#14C593] border border-1 border-[#000000]  w-[141.94px] h-[40px] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm mr-3  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
+              class='text-black font-sans items-center text-center bg-[#14C593] border border-1 border-[#000000]  w-[141.94px] h-[40px] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm mr-3  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
             >
               Add resources{' '}
             </button>
@@ -91,14 +98,16 @@ export default function navbar() {
             {/* <!------------------ profile pic -------------> */}
             <button
               type='button'
-              class='flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600'
+             
+              class='flex mr-3 text-sm items-center rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600'
               id='user-menu-button'
               aria-expanded='false'
               data-dropdown-toggle='user-dropdown'
               data-dropdown-placement='bottom'
             >
               <span class='sr-only'>Open user menu</span>
-              <img
+              <img 
+              onClick={()=>{setshow(!show)}}
                 className='w-[35px] h-[35px] object-cover rounded-full'
                 src='/profile.jpg'
                 alt='user profile.'
@@ -108,7 +117,7 @@ export default function navbar() {
             {/* <!-- Dropdown menu --> */}
 
             <div
-              class='z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600'
+              className={`${show? 'active' : 'hidden'} z-50 absolute top-[3rem] right-3 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
               id='user-dropdown'
             >
               <div class='px-4 py-3'>
@@ -182,9 +191,9 @@ export default function navbar() {
           </div>
         </div>
       </nav>
-      <div>
-        <Sidebar />
-      </div>
     </div>
-  );
+  )
 }
+
+export default Navbar;
+

@@ -1,29 +1,69 @@
-import React from 'react';
+import React, {useState} from 'react'
 
-export default function navbar2() {
+function Navbar2() {
+  const [open,setopen] = useState(false);
+
+
+
   return (
-      <div>
-         <nav class="_1yfus1e" className="fixed top-40 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" data-test-id="side-nav" aria-label="user profile navigation">
-          <section class="_1ozlbq6"><h2 class="_18undph9">My stuff</h2>
-          <ul>
-            <li>
-              <a data-test-id="side-nav-courses" class="_158ir6wt" href="/profile/me/courses">
-              <span class="_g20yn58">Courses</span></a>
-              </li>
-              </ul>
-              </section>
-              <section class="_1ozlbq6">
-                <h2 class="_18undph9">My account</h2>
-                <ul>
-                  <li>
-                    <a data-test-id="side-nav-progress" class="_8ry3zep" href="/profile/me/progress">
-                      <span class="_xy39ea8">Progress</span>
-                      </a></li>
-                      <li>
-                        <a data-test-id="side-nav-profile" class="_8ry3zep" href="/profile/me/">
-                          <span class="_xy39ea8">Profile</span></a></li><li><a data-test-id="side-nav-teachers" class="_8ry3zep" href="/profile/me/teachers">
-                            <span class="_xy39ea8">Teachers</span></a></li></ul>
-                            </section></nav>
+    <div>
+ <nav className="flex items-center justify-between px-4 py-3 bg-gray-800">
+      <div className="flex items-center">
+        <img
+        onClick={()=>{setopen(!open)}}
+          className="h-8 w-8"
+          src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+          alt="Workflow"
+        />
+        <div >
+          <div className="ml-10 flex items-baseline space-x-4">
+            <a
+              href="#"
+              className="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900"
+            >
+              Dashboard
+            </a>
+            <a
+              href="#"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >
+              Team
+            </a>
+            <a
+              href="#"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >
+              Projects
+            </a>
+            <a
+              href="#"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >
+              Calendar
+            </a>
+          </div>
+        </div>
       </div>
-    )
-  }
+      <div className="flex items-center">
+        <div>
+          <div as="div">
+            <img
+              className="h-8 w-8 rounded-full object-cover"
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt=""
+            />
+          </div>
+          <div align="end" className={`${open? 'active' : 'hidden'}  md:block ` }>
+            <div href="#/action-1">Your Profile</div>
+            <div href="#/action-2">Settings</div>
+            <div href="#/action-3">Sign out</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    </div>
+  )
+}
+
+export default Navbar2;

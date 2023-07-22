@@ -18,7 +18,9 @@ module.exports = {
       },
 
       colors: {
-        'logo': '#0EFF26',
+        logo: '#0EFF26',
+        btn: '#14C593',
+
       },
     },
   },
