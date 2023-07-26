@@ -1,20 +1,17 @@
 import './App.css';
-import Navbar from './components/navbar';
-import Sidebar from './components/sidebar';
-import Navbar2 from './components/navbar2';
-import Topnav from './components/topnav';
-import Footer from './components/footer';
+import Dashboard from './Pages/Dashboard';
+import Addres from './Pages/addres';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
-    <div className='App bg-[#FBFBFB]'>
-      <Navbar />
-
-      <Sidebar />
-
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={ <Dashboard/> } />
+        <Route path='addresources' element={ <Addres/> } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

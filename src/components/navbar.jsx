@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import SearchBar from './searchbar';
 import Sidebar from './sidebar';
+import Addres from '../Pages/addres';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-
-  const [show,setshow] = useState(false);
+  const [show, setshow] = useState(false);
 
   return (
     <div>
@@ -52,21 +53,21 @@ function Navbar() {
             </div>
           </div>
 
-         
           <div class='flex  md:order-2'>
-            
             {/* <!-- Responsive Search bar --> */}
             <div className='hidden md:block mr-4'>
               <SearchBar />
             </div>
 
-             {/* <!-- Add resource button --> */}
-            <button
-              type='button'
-              class='text-black font-sans items-center text-center bg-[#14C593] border border-1 border-[#000000]  w-[141.94px] h-[40px] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm mr-3  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
-            >
-              Add resources{' '}
-            </button>
+            {/* <!-- Add resource button --> */}
+            <Link to='/addresources'>
+              <button
+                type='button'
+                class='text-black font-sans items-center text-center bg-[#14C593] border border-1 border-[#000000]  w-[141.94px] h-[40px] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm mr-3  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
+              >
+                Add resources
+              </button>
+            </Link>
 
             <div class='flex md:order-2'>
               <button
@@ -98,7 +99,6 @@ function Navbar() {
             {/* <!------------------ profile pic -------------> */}
             <button
               type='button'
-             
               class='flex mr-3 text-sm items-center rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600'
               id='user-menu-button'
               aria-expanded='false'
@@ -106,8 +106,10 @@ function Navbar() {
               data-dropdown-placement='bottom'
             >
               <span class='sr-only'>Open user menu</span>
-              <img 
-              onClick={()=>{setshow(!show)}}
+              <img
+                onClick={() => {
+                  setshow(!show);
+                }}
                 className='w-[35px] h-[35px] object-cover rounded-full'
                 src='/profile.jpg'
                 alt='user profile.'
@@ -117,7 +119,9 @@ function Navbar() {
             {/* <!-- Dropdown menu --> */}
 
             <div
-              className={`${show? 'active' : 'hidden'} z-50 absolute top-[3rem] right-3 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
+              className={`${
+                show ? 'active' : 'hidden'
+              } z-50 absolute top-[3rem] right-3 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
               id='user-dropdown'
             >
               <div class='px-4 py-3'>
@@ -192,8 +196,7 @@ function Navbar() {
         </div>
       </nav>
     </div>
-  )
+  );
 }
 
 export default Navbar;
-
