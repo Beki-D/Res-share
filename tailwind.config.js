@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Inter', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'Arial', 'sans-serif'],
       },
 
       fontSize: {
@@ -18,13 +18,16 @@ module.exports = {
       },
 
       colors: {
+        text: '#fafafa',
+        background: '#050505',
+        primary: '#14C593',
+        secondary: '#1a1a1a',
+        accent: '#ffe866',
+
         logo: '#0EFF26',
         btn: '#14C593',
-
       },
     },
   },
-  plugins: [
-    require('flowbite/plugin'),
-  ],
-}
+  plugins: [require('flowbite/plugin')],
+};
