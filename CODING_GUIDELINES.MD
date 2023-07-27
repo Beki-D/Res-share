@@ -133,3 +133,5 @@ function CustomButton({ text, onClick }) {
 ```
 
 By following these guidelines consistently, we can ensure that our codebase remains organized, easily understandable, and scalable. Let's collaborate and adhere to these conventions to streamline our development process and improve code maintenance in the long run.
+
+I'll try to add more guides and rules to this doc as we progress. Hit me up on telegram `@bk25119` or comment here if you have any questions or ideas for improvements.
