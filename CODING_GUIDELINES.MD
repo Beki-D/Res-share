@@ -32,18 +32,20 @@ import FOOTER from './components/Footer';
 
 ## Quotation Usage
 
-- Prefer using double quotes (" ") for strings in code.
+- Prefer using single quotes (' ') for strings and most things in code.
 
-- Use single quotes (' ') only in special cases or when the string contains double quotes within it.
+- Use double quotes (" ") only in special cases or when the string contains single quotes within it.
 
 Example:
 
 ```jsx
-// Correct
+// Correct (consistent double quotes)
 
 const message = 'Hello, world!';
 
 const specialText = 'He said, "Welcome!"';
+
+const sentenceWithApostrophe = "I can't believe it!";
 
 // Avoid
 
