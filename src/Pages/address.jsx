@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Addres() {
+function Address() {
   return (
     <div className='flex flex-col justify-around mb-5'>
       <div>
@@ -327,4 +327,4 @@ function Addres() {
   );
 }
 
-export default Addres;
+export default Address;

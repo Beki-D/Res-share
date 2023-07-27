@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import Topnav from './topnav';
 import Card from './card';
 
-
 function Sidebar() {
-   
-const [open, setopen] = useState(false);
+  const [open, setopen] = useState(false);
 
   return (
     <div>
-       <div>
+      <div>
         <div className='flex flex-row'>
           <button
             data-drawer-target='sidebar-multi-level-sidebar'
@@ -52,7 +52,9 @@ const [open, setopen] = useState(false);
                 <li>
                   <button
                     type='button'
-                    onClick={()=>{setopen(!open)}}
+                    onClick={() => {
+                      setopen(!open);
+                    }}
                     class='flex items-center w-full p-2 text-base  text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'
                     aria-controls='dropdown-example'
                     data-collapse-toggle='dropdown-example'
@@ -79,8 +81,11 @@ const [open, setopen] = useState(false);
                       />
                     </svg>
                   </button>
-                  
-                  <ul id='dropdown-example' className={`${open? 'active' : 'hidden'} py-2 space-y-2` }>
+
+                  <ul
+                    id='dropdown-example'
+                    className={`${open ? 'active' : 'hidden'} py-2 space-y-2`}
+                  >
                     <li>
                       <a
                         href='#'
@@ -116,14 +121,14 @@ const [open, setopen] = useState(false);
                   </div>
                 </li>
                 <li>
-                  <a
-                    href='#'
+                  <Link
+                    to='/profile'
                     class='flex justify-items-start p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group'
                   >
                     <span class='flex-1 font-sans ml-3 text-left whitespace-nowrap'>
                       Profile
                     </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -152,13 +157,8 @@ const [open, setopen] = useState(false);
 
         <div></div>
       </div>
-
-
     </div>
-  )
+  );
 }
 
 export default Sidebar;
-
-
-     
