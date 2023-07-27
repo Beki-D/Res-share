@@ -90,11 +90,24 @@ Example:
 ```css
 src/
   ├── components/
+  │   ├── Card.jsx
+  │   ├── Navbar.jsx
+  │   └── Sidebar.jsx
   ├── pages/
+  │   ├── Home.jsx
+  │   ├── AboutUs.jsx
+  │   └── Services.jsx
   ├── assets/
+  │   ├── logo.png
+  │   └── background.jpg
   ├── utils/
+  │   ├── api.js
+  │   └── helpers.js
   ├── styles/
+  │   ├── global.css
+  │   └── button.css
   └── ...
+
 ```
 
 ## Constants
