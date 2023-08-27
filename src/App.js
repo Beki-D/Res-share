@@ -1,17 +1,17 @@
 import './App.css';
-import Dashboard from './Pages/Dashboard';
-import Addres from './Pages/addres';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Outlet} from 'react-router-dom';
+// import {NavBar} from './components/NavBar';
+// import { WebFooter } from './components/webFooter';
+
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={ <Dashboard/> } />
-        <Route path='addresources' element={ <Addres/> } />
-      </Routes>
-    </BrowserRouter>
+    <div className='App'>
+      {/* <NavBar /> */}
+      <Outlet />
+      {/* <WebFooter /> */}
+    </div>
   );
 }
 
